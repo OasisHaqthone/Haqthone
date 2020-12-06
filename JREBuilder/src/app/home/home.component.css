@@ -1,0 +1,52 @@
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5px;
+}
+.searchcontainer {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5px;
+}
+
+.jreontainer {
+    height: 120%;
+    width: 100%;   
+    justify-content: center;
+   display: inline-block;
+   margin-bottom: 10%;
+    
+}
+.jreTable {
+    height: 120%;
+    width: 80%;   
+    justify-content: center;
+   padding-left: 25%;
+   padding-top: 20%;
+    
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+
+  .classWithPad { margin-top:15%; padding:10px; }

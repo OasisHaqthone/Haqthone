@@ -1,0 +1,46 @@
+<section id="home">
+         <div class="row">
+           <div class="row"></div>
+           <div  class="col-sm-4" ></div>
+                <div class="col-sm-4">
+                  <div class="input-group classWithPad">
+                    <input type="text" class="form-control"  [(ngModel)]="searchkey" placeholder="Search for JRE...">
+                    <span class="input-group-btn">
+                    
+                      <button class="btn btn-default" type="button"(click)="searchJre()">Search</button>
+            
+                    </span>
+                  </div>
+                  <div *ngIf ="showAlert" class="alert alert-danger alert-dismissible">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close" (click)="closeAlert()">&times;</a>
+                    <strong>Failed !</strong>Search Key word is empty.
+                  </div>
+                  <div *ngIf ="showWarningAlert" class="alert alert-warning alert-dismissible">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close" (click)="closeAlert()">&times;</a>
+                    <strong>Info!</strong>JRE Doe not Exist !
+                  </div>
+                </div>
+          <div class="row">
+                  <div class=" col">
+                   <div class="jreTable">
+                    <table class="table table-hover" id =jres>     
+                          <thead>
+                            <th *ngFor="let col of columns">
+                              {{col}}
+                            </th>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let jre of jreArray">
+                              <td >{{jre.id}}</td>
+                              <td >{{jre.jrename}}</td>
+                              <td  matTooltipPosition="above" matTooltip={{jre.basepackage}}>{{ (jre.basepackage.length>15)? (jre.basepackage | slice:0:15)+'..':(jre.basepackage) }}</td>
+                              <td ><input class="btn btn-default" type="submit" value="Download" (click) ="download(jre.jrename)"></td>       
+                          </tbody>
+                      </table>  
+                    </div>                
+                  </div>
+         </div>
+                   
+            </div>
+</section>
+

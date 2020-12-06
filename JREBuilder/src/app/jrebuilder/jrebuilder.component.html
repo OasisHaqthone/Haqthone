@@ -1,0 +1,75 @@
+<section id="jrebuilder">
+  <div class="container">
+       <div class="row">
+
+            <div class="col-md-6 col-sm-6">
+             <!--<div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  Select JRE
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li *ngFor="let jre of jreList" (click)="valueChanged(jre)">
+                      {{jre}}
+                    
+                    </li>          
+                </ul>
+                
+              </div>-->
+    
+              <div  class="container">
+                <div class="pageheading">
+                  <h3>Build your custom JRE !</h3> 
+                </div>
+                  
+                  <span></span>
+                  <div *ngIf="jrepackages.length">
+                    <table class="table table-hover">
+                        <thead class="">
+                          <tr>
+                            <th>#</th>
+                            <th>package Name</th>
+                            <th>Description</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let jrepackage of jrepackages">
+                              <td><input type="checkbox" value="jrepackage.packageName" [checked]="jrepackage.checked" (change)="getItemFromCheckbox(jrepackage, $event)"></td>
+                              <td>{{jrepackage.packageName}}</td>
+                              <td>{{jrepackage.description}}</td>
+                              <td></td>
+                            
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <ul class="pagination justify-content-center">
+                  <li class="page-item"><a (click)="previousClick()" class="page-link">Previous</a></li>
+                  <li *ngFor='let index of pageIndexes' class="page-item" [ngClass]="active(index)">
+                          <a (click)="getPaginationWithIndex(index)" class="page-link">
+                            {{index + 1}}
+                          </a>
+                  </li>
+                  <li class="page-item"><a (click)="nextClick()" class="page-link">Next</a></li>
+                </ul>
+    
+                
+            
+                  
+    
+                  <div *ngIf ="showAlert" class="alert alert-danger alert-dismissible">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close"  (click)="closeAlert()">&times;</a>
+                    <strong>Failed !</strong>{{msg}}
+                  </div>
+            
+        </div>
+            </div>
+            
+       </div>
+       <div class="jrebutton"> 
+        <button type="button" class="btn btn-primary" (click)="buildCustomJRE()">Build Your JRE</button>
+      </div>
+  </div>
+</section>
+
